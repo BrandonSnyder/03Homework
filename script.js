@@ -12,7 +12,7 @@ var characters = {
 };
 // Pool of Characters where the password will be pulled from
 var poolOfChars = [];
-
+var randomPassword = ""
 
 // Declaration of function Wrap all code in this function
 function generatePassword(){
@@ -46,40 +46,19 @@ console.log(poolOfChars)
 console.log(lengthOfPassword)
 // deciding on an index
 // creating the password
-var randomPassword = ""
+
 for ( i = 0; i < lengthOfPassword ; i++ ) {
   randomPassword = randomPassword + poolOfChars[Math.floor(Math.random()*poolOfChars.length)];
 };
-
-console.log(randomPassword);
-
-
+return randomPassword;
 }
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
-// test code call
-
-generatePassword();
-// end of test code call
-
-
-
-
-
-
-
-
-
-
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
