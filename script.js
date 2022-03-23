@@ -11,11 +11,13 @@ var characters = {
   specialCharacters : ['!','@','#','$','%','^','&','*','?','<','>'],
 };
 // Pool of Characters where the password will be pulled from
-var poolOfChars = [];
-var randomPassword = ""
+
+
 
 // Declaration of function Wrap all code in this function
 function generatePassword(){
+var randomPassword = ""; 
+var poolOfChars = []; 
 //function to prompt number of characters return input as number
 function numOfChars(){
   var lengthOfPassword = window.prompt('How many characters does your password need?', 'Enter a number between 1 and 30');
@@ -42,8 +44,6 @@ function chooseCharTypes(){
 };
 poolOfChars = chooseCharTypes();
 
-console.log(poolOfChars)
-console.log(lengthOfPassword)
 // deciding on an index
 // creating the password
 
